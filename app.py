@@ -724,9 +724,8 @@ st.markdown("---")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.markdown("**Course Information**")
-    st.write("PHL201: Digital Ethics")
-    st.write("University of Michigan, Ann Arbor")
+    st.markdown("**Resources**")
+    st.markdown("[Visit CognitiveCloud.ai](https://cognitivecloud.ai/)")
 
 with col2:
     st.markdown("**Author**")
@@ -737,7 +736,6 @@ with col3:
     st.markdown("**Actions**")
     if st.button("Copy Citation"):
         st.success("Citation copied!")
-    st.markdown("[Visit CognitiveCloud.ai](https://cognitivecloud.ai/)")
 
 st.markdown("---")
 st.markdown("### Reflection Prompt")
