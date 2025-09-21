@@ -132,7 +132,7 @@ st.markdown("""
 <div class="paper-header">
     <h1 class="paper-title">Information Networks and Moral Responsibility</h1>
     <h2 class="paper-author">Xavier Honablue, M.Ed.</h2>
-    <p class="paper-affiliation">University of Michigan Ann Arbor • MADS Scholar • September 2025</p>
+    <p class="paper-affiliation">University of Michigan Ann Arbor • Masters Applied Data Science • September 2025</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -231,7 +231,7 @@ def display_content():
         # Information Networks and Moral Responsibility: How Digital Connectivity Transforms Ethical Obligations
 
         **Xavier Honablue, M.Ed.**  
-        University of Michigan Ann Arbor • MADS Scholar  
+        University of Michigan Ann Arbor • Masters Applied Data Science  
         September 2025
 
         ## Abstract
