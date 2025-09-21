@@ -248,71 +248,260 @@ def display_content():
             st.write(f"{i}. {obj}")
 
     elif section == "Full Paper Text":
-        st.markdown('<div class="content-section">', unsafe_allow_html=True)
-        st.subheader("Information Networks and Moral Responsibility")
-        st.subheader("How Digital Connectivity Transforms Ethical Obligations")
+        st.markdown("""
+        <div style="background: white; padding: 3rem; border-radius: 12px; margin: 1rem 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1); font-size: 1rem; line-height: 1.8; text-align: justify;">
         
-        st.write("**Xavier Honablue, M.Ed.**")
-        st.write("University of Michigan Ann Arbor • Masters Applied Data Science")
-        st.write("September 2025")
+        <div style="text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 2px solid #e2e8f0;">
+            <h1 style="color: #2d3748; font-size: 2.2rem; margin-bottom: 1rem;">Information Networks and Moral Responsibility</h1>
+            <h2 style="color: #4a5568; font-size: 1.4rem; margin-bottom: 1rem;">How Digital Connectivity Transforms Ethical Obligations</h2>
+            <p style="font-size: 1.1rem; color: #2d3748; margin-bottom: 0.5rem;"><strong>Xavier Honablue, M.Ed.</strong></p>
+            <p style="color: #666;">University of Michigan Ann Arbor • Masters Applied Data Science<br>September 2025</p>
+        </div>
+
+        <h2 style="color: #2d3748; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #667eea;">Abstract</h2>
         
-        st.subheader("Abstract")
-        st.write("""
-        This paper examines how information networks and digital connectivity affect moral responsibility 
-        in contemporary global society. Drawing on empirical research in moral psychology, network theory, 
-        and media studies, we analyze how awareness of distant suffering through digital media creates new 
-        forms of moral obligation that challenge traditional proximity-based ethical frameworks. We propose 
-        the Information-Mediated Responsibility (IMR) model, which accounts for how technological mediation 
-        affects moral salience, emotional engagement, and behavioral response.
-        """)
+        <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #667eea;">
+            <p>This paper examines how information networks and digital connectivity affect moral responsibility in contemporary global society. Drawing on empirical research in moral psychology, network theory, and media studies, we analyze how awareness of distant suffering through digital media creates new forms of moral obligation that challenge traditional proximity-based ethical frameworks. We propose the <strong>Information-Mediated Responsibility (IMR) model</strong>, which accounts for how technological mediation affects moral salience, emotional engagement, and behavioral response.</p>
+            
+            <p>Key findings include: (1) digital information exposure creates measurable changes in moral judgment patterns, (2) network effects amplify individual moral responses through social reinforcement mechanisms, and (3) information overload can paradoxically reduce moral responsiveness through psychological defense mechanisms. We conclude with practical recommendations for ethical engagement in digital environments and educational approaches for developing critical moral literacy in an interconnected world.</p>
+            
+            <p style="font-style: italic; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;"><strong>Keywords:</strong> moral responsibility, digital ethics, information networks, moral psychology, global ethics, media effects</p>
+        </div>
+
+        <h2 style="color: #2d3748; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #667eea;">1. Introduction</h2>
         
-        st.markdown('<div class="keywords">', unsafe_allow_html=True)
-        st.write("**Keywords:** moral responsibility, digital ethics, information networks, moral psychology, global ethics, media effects")
-        st.markdown('</div>', unsafe_allow_html=True)
+        <p>The digital revolution has fundamentally altered the landscape of moral responsibility. Unlike previous generations, who remained largely unaware of distant suffering, contemporary individuals receive constant streams of information about global injustices, environmental crises, and human rights violations. This unprecedented access to information about suffering raises profound questions about the scope and nature of moral obligation.</p>
+
+        <p>Traditional ethical frameworks developed under assumptions of limited information and local communities. Utilitarian calculations assumed practical constraints on knowledge and action. Virtue ethics focused on character development within particular communities. Deontological systems emphasized universal principles but were applied within contexts of limited awareness. None adequately address the moral implications of instantaneous global information access.</p>
+
+        <p>This paper proposes the Information-Mediated Responsibility (IMR) model as a framework for understanding how digital connectivity transforms moral obligations. Unlike speculative theoretical approaches, IMR builds on established research in moral psychology, media effects, and network theory to generate empirically grounded insights about contemporary ethical challenges.</p>
+
+        <h2 style="color: #2d3748; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #667eea;">2. Theoretical Framework</h2>
+
+        <h3 style="color: #4a5568; margin: 1.5rem 0 1rem;">2.1 Moral Salience and Information Exposure</h3>
         
-        st.subheader("1. Introduction")
-        st.write("""
-        The digital revolution has fundamentally altered the landscape of moral responsibility. Unlike 
-        previous generations, who remained largely unaware of distant suffering, contemporary individuals 
-        receive constant streams of information about global injustices, environmental crises, and human 
-        rights violations. This unprecedented access to information about suffering raises profound questions 
-        about the scope and nature of moral obligation.
-        """)
+        <p>Research in moral psychology demonstrates that moral judgment depends heavily on salience - the degree to which moral considerations capture attention and emotional engagement (Greene, 2013; Haidt, 2012). Digital media fundamentally alters moral salience through several mechanisms:</p>
+
+        <div style="background: #e6f3ff; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #4299e1;">
+            <p><strong>Proximity Override:</strong> Visual media can make distant suffering more psychologically proximate than local issues. Neuroimaging studies show that viewing images of distant suffering activates similar empathy networks as witnessing local distress (Decety & Jackson, 2004).</p>
+
+            <p><strong>Narrative Framing:</strong> Digital platforms use storytelling techniques that enhance emotional engagement with distant moral issues. Research indicates that narrative structure significantly influences moral judgment independent of factual content (Nussbaum, 2001).</p>
+
+            <p><strong>Algorithmic Curation:</strong> Social media algorithms selectively expose users to morally charged content based on engagement patterns, creating echo chambers that amplify certain moral concerns while obscuring others (Pariser, 2011).</p>
+        </div>
+
+        <h3 style="color: #4a5568; margin: 1.5rem 0 1rem;">2.2 Network Effects in Moral Responsibility</h3>
         
-        st.write("""
-        Traditional ethical frameworks developed under assumptions of limited information and local communities. 
-        Utilitarian calculations assumed practical constraints on knowledge and action. Virtue ethics focused 
-        on character development within particular communities. Deontological systems emphasized universal 
-        principles but were applied within contexts of limited awareness. None adequately address the moral 
-        implications of instantaneous global information access.
-        """)
+        <p>Social network theory provides tools for understanding how individual moral responses aggregate into collective moral phenomena:</p>
+
+        <p><strong>Moral Cascade Effects:</strong> When individuals observe others responding to moral issues, they become more likely to respond themselves, creating cascading waves of moral engagement (Bicchieri, 2006).</p>
+
+        <p><strong>Diffusion of Responsibility:</strong> Paradoxically, awareness that many others are also aware of moral issues can reduce individual feelings of responsibility through diffusion effects documented in social psychology (Latané & Darley, 1970).</p>
+
+        <p><strong>Network Polarization:</strong> Digital networks can amplify moral polarization by sorting individuals into like-minded communities that reinforce existing moral commitments while demonizing alternative perspectives (Sunstein, 2017).</p>
+
+        <h3 style="color: #4a5568; margin: 1.5rem 0 1rem;">2.3 Information Overload and Moral Numbing</h3>
         
-        st.subheader("2. Theoretical Framework")
-        st.write("""
-        Research in moral psychology demonstrates that moral judgment depends heavily on salience - the degree 
-        to which moral considerations capture attention and emotional engagement. Digital media fundamentally 
-        alters moral salience through several mechanisms including proximity override, narrative framing, and 
-        algorithmic curation.
-        """)
+        <p>Psychological research reveals systematic limitations in human capacity to process moral information:</p>
+
+        <p><strong>Finite Pool of Worry:</strong> Individuals have limited capacity for moral concern, leading to zero-sum competition between moral issues for attention and emotional engagement (Weber, 2006).</p>
+
+        <p><strong>Compassion Fatigue:</strong> Repeated exposure to suffering can reduce empathetic responding through psychological defense mechanisms (Figley, 2002).</p>
+
+        <p><strong>Psychic Numbing:</strong> Research demonstrates that moral responsiveness decreases as the number of victims increases, violating normative principles of proportional response (Slovic, 2007).</p>
+
+        <h2 style="color: #2d3748; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #667eea;">3. The Information-Mediated Responsibility Model</h2>
+
+        <h3 style="color: #4a5568; margin: 1.5rem 0 1rem;">3.1 Core Principles</h3>
         
-        st.subheader("3. The Information-Mediated Responsibility Model")
-        st.write("""
-        The IMR model proposes that moral responsibility in digital environments operates according to four 
-        core principles: Information Integration, Network Amplification, Cognitive Load, and Mediation Transparency. 
-        Unlike purely theoretical frameworks, IMR generates specific testable predictions about how digital 
-        connectivity affects moral response.
-        """)
+        <p>The IMR model proposes that moral responsibility in digital environments operates according to the following principles:</p>
+
+        <div style="background: #e6f3ff; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #4299e1;">
+            <p><strong>Information Integration Principle:</strong> Moral obligations arise through the integration of factual information, emotional engagement, and capacity for effective action. All three components are necessary for full moral responsibility.</p>
+        </div>
+
+        <div style="background: #e6f3ff; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #4299e1;">
+            <p><strong>Network Amplification Principle:</strong> Individual moral responses are amplified or diminished through network effects that can either reinforce or undermine moral engagement.</p>
+        </div>
+
+        <div style="background: #e6f3ff; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #4299e1;">
+            <p><strong>Cognitive Load Principle:</strong> Moral responsiveness is subject to cognitive limitations that create systematic biases in how individuals process moral information.</p>
+        </div>
+
+        <div style="background: #e6f3ff; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #4299e1;">
+            <p><strong>Mediation Transparency Principle:</strong> The technological mediation of moral information affects moral judgment in ways that are often invisible to the moral agent, requiring critical literacy for appropriate moral response.</p>
+        </div>
+
+        <h3 style="color: #4a5568; margin: 1.5rem 0 1rem;">3.2 Empirical Predictions</h3>
         
-        st.subheader("Conclusion")
-        st.write("""
-        The Information-Mediated Responsibility model provides a framework for understanding how digital 
-        connectivity transforms moral obligation. Key insights include recognition that moral responsibility 
-        is not simply expanded by information access but qualitatively transformed, network effects create 
-        collective moral phenomena that exceed individual moral capacities, and technological mediation affects 
-        moral judgment in ways requiring critical literacy.
-        """)
+        <p>Unlike purely theoretical frameworks, IMR generates specific testable predictions:</p>
+
+        <div style="background: #f0fff4; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #38a169;">
+            <p><strong>Prediction 1:</strong> Individuals exposed to narrative-rich presentations of distant suffering will show greater moral engagement than those receiving statistical information about larger-scale suffering.</p>
+        </div>
+
+        <div style="background: #f0fff4; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #38a169;">
+            <p><strong>Prediction 2:</strong> Moral responsiveness will correlate with network position, with individuals at network centers showing both greater initial engagement and faster saturation effects.</p>
+        </div>
+
+        <div style="background: #f0fff4; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #38a169;">
+            <p><strong>Prediction 3:</strong> Individuals will show measurable decreases in moral responsiveness when exposed to multiple simultaneous moral demands compared to sequential presentation.</p>
+        </div>
+
+        <div style="background: #f0fff4; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #38a169;">
+            <p><strong>Prediction 4:</strong> Training in media literacy will improve calibration between moral response and objective moral significance of issues.</p>
+        </div>
+
+        <h2 style="color: #2d3748; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #667eea;">4. Case Studies</h2>
+
+        <h3 style="color: #4a5568; margin: 1.5rem 0 1rem;">4.1 Social Media and Crisis Response</h3>
         
-        st.markdown('</div>', unsafe_allow_html=True)
+        <div style="background: #fff5f5; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #e53e3e;">
+            <p>The 2010 Haiti earthquake provides a paradigmatic case of information-mediated moral responsibility. Social media enabled unprecedented rapid response, with millions of individuals donating through text messaging within hours of the disaster. However, analysis reveals several concerning patterns:</p>
+            
+            <ul style="margin: 1rem 0;">
+                <li><strong>Attention Decay:</strong> Initial massive engagement declined rapidly as media attention shifted, despite ongoing need</li>
+                <li><strong>Visible vs. Invisible Needs:</strong> Highly visible rescue efforts received disproportionate support compared to less dramatic but equally important infrastructure needs</li>
+                <li><strong>Geographic Bias:</strong> Haiti received more per-capita aid than simultaneous crises in less media-accessible regions</li>
+            </ul>
+        </div>
+
+        <h3 style="color: #4a5568; margin: 1.5rem 0 1rem;">4.2 Climate Change and Temporal Responsibility</h3>
+        
+        <div style="background: #fff5f5; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #e53e3e;">
+            <p>Climate change presents unique challenges for information-mediated responsibility due to temporal distance and causal complexity:</p>
+            
+            <ul style="margin: 1rem 0;">
+                <li><strong>Present Bias:</strong> Individuals show reduced moral engagement with future compared to present suffering, even when future suffering is more severe</li>
+                <li><strong>Causal Opacity:</strong> Complex causal chains between individual action and climate outcomes reduce feelings of personal responsibility</li>
+                <li><strong>Statistical vs. Narrative:</strong> Abstract statistics about future climate impacts generate less moral engagement than personal stories about present climate effects</li>
+            </ul>
+        </div>
+
+        <h3 style="color: #4a5568; margin: 1.5rem 0 1rem;">4.3 Global Health Inequities</h3>
+        
+        <div style="background: #fff5f5; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #e53e3e;">
+            <p>The COVID-19 pandemic revealed both possibilities and limitations of global moral solidarity:</p>
+            
+            <ul style="margin: 1rem 0;">
+                <li><strong>Initial Universalism:</strong> Early pandemic response showed unprecedented global cooperation based on shared vulnerability</li>
+                <li><strong>Rapid Localization:</strong> As vaccines became available, moral concern quickly narrowed to national and local priorities</li>
+                <li><strong>Information Fatigue:</strong> Sustained information exposure led to measurable decreases in moral engagement over time</li>
+            </ul>
+        </div>
+
+        <h2 style="color: #2d3748; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #667eea;">5. Practical Applications</h2>
+
+        <h3 style="color: #4a5568; margin: 1.5rem 0 1rem;">5.1 Ethical Design of Information Systems</h3>
+        
+        <p>IMR analysis suggests several principles for ethical design of information systems:</p>
+        
+        <p><strong>Moral Calibration:</strong> Systems should present moral information in ways that promote appropriate rather than maximal emotional engagement.</p>
+        
+        <p><strong>Attention Distribution:</strong> Platforms should avoid algorithms that concentrate moral attention on highly engaging but potentially less significant issues.</p>
+        
+        <p><strong>Action Facilitation:</strong> Moral information should be coupled with concrete, effective action opportunities to prevent learned helplessness.</p>
+        
+        <p><strong>Transparency Requirements:</strong> Users should understand how algorithmic curation affects their moral information environment.</p>
+
+        <h3 style="color: #4a5568; margin: 1.5rem 0 1rem;">5.2 Educational Implications</h3>
+        
+        <p>Digital moral literacy requires new educational approaches:</p>
+        
+        <p><strong>Media Effects Education:</strong> Students need explicit instruction in how digital media affects moral judgment and behavior.</p>
+        
+        <p><strong>Network Awareness:</strong> Understanding how social networks shape moral beliefs and responses.</p>
+        
+        <p><strong>Cognitive Bias Training:</strong> Recognition of systematic limitations in moral information processing.</p>
+        
+        <p><strong>Practical Ethics:</strong> Development of frameworks for navigating complex moral information environments.</p>
+
+        <h3 style="color: #4a5568; margin: 1.5rem 0 1rem;">5.3 Policy Recommendations</h3>
+        
+        <p>Several policy interventions could improve moral information environments:</p>
+        
+        <p><strong>Platform Transparency:</strong> Requirements for social media platforms to disclose algorithmic curation of moral content.</p>
+        
+        <p><strong>Information Diversity:</strong> Policies promoting exposure to diverse moral perspectives and global moral concerns.</p>
+        
+        <p><strong>Attention Protection:</strong> Recognition that human attention is a finite moral resource requiring protection from exploitation.</p>
+        
+        <p><strong>Global Information Justice:</strong> Efforts to ensure equitable representation of global moral concerns in information systems.</p>
+
+        <h2 style="color: #2d3748; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #667eea;">6. Limitations and Future Research</h2>
+
+        <h3 style="color: #4a5568; margin: 1.5rem 0 1rem;">6.1 Methodological Limitations</h3>
+        
+        <p>Current research on information-mediated moral responsibility faces several limitations:</p>
+        
+        <ul style="margin: 1rem 0;">
+            <li><strong>Correlation vs. Causation:</strong> Much evidence is correlational, making causal claims tentative</li>
+            <li><strong>Cultural Specificity:</strong> Most studies focus on Western, educated populations</li>
+            <li><strong>Laboratory vs. Real-World:</strong> Experimental studies may not generalize to complex real-world moral environments</li>
+            <li><strong>Temporal Constraints:</strong> Long-term effects of digital moral engagement remain understudied</li>
+        </ul>
+
+        <h3 style="color: #4a5568; margin: 1.5rem 0 1rem;">6.2 Future Research Directions</h3>
+        
+        <p>Several research programs could advance understanding of information-mediated moral responsibility:</p>
+        
+        <p><strong>Longitudinal Studies:</strong> Tracking how digital moral engagement evolves over time and life course.</p>
+        
+        <p><strong>Cross-Cultural Research:</strong> Examining how cultural differences affect information-mediated moral responsibility.</p>
+        
+        <p><strong>Intervention Studies:</strong> Testing specific approaches for improving moral calibration in digital environments.</p>
+        
+        <p><strong>Neuroscience Applications:</strong> Using brain imaging to understand neural mechanisms of digitally mediated moral response.</p>
+        
+        <p><strong>Network Analysis:</strong> Large-scale studies of how moral beliefs and behaviors spread through digital networks.</p>
+
+        <h2 style="color: #2d3748; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #667eea;">7. Conclusion</h2>
+        
+        <p>The Information-Mediated Responsibility model provides a framework for understanding how digital connectivity transforms moral obligation. Unlike traditional ethical theories developed for limited-information environments, IMR acknowledges both the opportunities and limitations created by global information access.</p>
+
+        <p>Key insights include recognition that:</p>
+        
+        <ul style="margin: 1rem 0;">
+            <li>Moral responsibility is not simply expanded by information access but qualitatively transformed</li>
+            <li>Network effects create collective moral phenomena that exceed individual moral capacities</li>
+            <li>Cognitive limitations require systematic approaches to moral information management</li>
+            <li>Technological mediation affects moral judgment in ways requiring critical literacy</li>
+        </ul>
+
+        <p>These insights have practical implications for educational curricula, platform design, and public policy. As digital connectivity continues to evolve, developing sophisticated frameworks for information-mediated moral responsibility becomes increasingly urgent.</p>
+
+        <p>The goal is not to maximize moral engagement but to calibrate it appropriately - responding to genuine moral demands while avoiding the psychological defense mechanisms that lead to moral numbing and disengagement. This requires both individual moral literacy and collective efforts to create information environments that support rather than undermine moral agency.</p>
+
+        <p>Future research should focus on empirical testing of IMR predictions and development of practical tools for navigating moral complexity in digital environments. The stakes are high: our capacity for appropriate moral response to global challenges may depend on our ability to understand and manage the transformation of moral responsibility in the digital age.</p>
+
+        <h2 style="color: #2d3748; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #667eea;">References</h2>
+        
+        <div style="background: #f7fafc; padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+            <p>Bicchieri, C. (2006). <em>The grammar of society: The nature and dynamics of social norms</em>. Cambridge University Press.</p>
+
+            <p>Decety, J., & Jackson, P. L. (2004). The functional architecture of human empathy. <em>Behavioral and Cognitive Neuroscience Reviews</em>, 3(2), 71-100.</p>
+
+            <p>Figley, C. R. (2002). Compassion fatigue: Psychotherapists' chronic lack of self care. <em>Journal of Clinical Psychology</em>, 58(11), 1433-1441.</p>
+
+            <p>Greene, J. D. (2013). <em>Moral tribes: Emotion, reason, and the gap between us and them</em>. Penguin Press.</p>
+
+            <p>Haidt, J. (2012). <em>The righteous mind: Why good people are divided by politics and religion</em>. Vintage Books.</p>
+
+            <p>Latané, B., & Darley, J. M. (1970). <em>The unresponsive bystander: Why doesn't he help?</em> Appleton-Century-Crofts.</p>
+
+            <p>Nussbaum, M. C. (2001). <em>Upheavals of thought: The intelligence of emotions</em>. Cambridge University Press.</p>
+
+            <p>Pariser, E. (2011). <em>The filter bubble: What the Internet is hiding from you</em>. Penguin Press.</p>
+
+            <p>Slovic, P. (2007). "If I look at the mass I will never act": Psychic numbing and genocide. <em>Judgment and Decision Making</em>, 2(2), 79-95.</p>
+
+            <p>Sunstein, C. R. (2017). <em>#Republic: Divided democracy in the age of social media</em>. Princeton University Press.</p>
+
+            <p>Weber, E. U. (2006). Experience-based and description-based perceptions of long-term risk: Why global warming does not scare us (yet). <em>Climatic Change</em>, 77(1-2), 103-120.</p>
+        </div>
+        
+        </div>
+        """, unsafe_allow_html=True)
 
     elif section == "Abstract & Introduction":
         st.markdown('<div class="abstract-box">', unsafe_allow_html=True)
