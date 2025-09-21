@@ -726,7 +726,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown("**Course Information**")
     st.write("PHL201: Digital Ethics")
-    st.write("University of Michigan Ann Arbor")
+    st.write("University of Michigan, Ann Arbor")
 
 with col2:
     st.markdown("**Author**")
@@ -737,6 +737,7 @@ with col3:
     st.markdown("**Actions**")
     if st.button("Copy Citation"):
         st.success("Citation copied!")
+    st.markdown("[Visit CognitiveCloud.ai](https://cognitivecloud.ai/)")
 
 st.markdown("---")
 st.markdown("### Reflection Prompt")
@@ -745,3 +746,6 @@ st.markdown("After engaging with this paper, consider: How has your understandin
 reflection = st.text_area("Share your reflection:", height=100)
 if reflection:
     st.success("Thank you for your thoughtful reflection!")
+
+st.markdown("---")
+st.markdown("**Powered by:** [CognitiveCloud.ai](https://cognitivecloud.ai/) | Advanced AI Solutions")
