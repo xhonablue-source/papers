@@ -2,6 +2,8 @@ import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
 import numpy as np
+import pandas as pd
+from datetime import datetime
 
 st.set_page_config(
     page_title="PHL201 - Information Networks and Moral Responsibility",
@@ -16,7 +18,7 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 .stApp {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     font-family: 'Inter', sans-serif;
 }
 
@@ -27,22 +29,23 @@ st.markdown("""
     border-radius: 12px;
     margin-bottom: 2rem;
     text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .paper-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .paper-author {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 0.3rem;
 }
 
 .paper-affiliation {
-    font-size: 0.9rem;
+    font-size: 1rem;
     opacity: 0.9;
 }
 
@@ -56,73 +59,132 @@ st.markdown("""
 }
 
 .abstract-box {
-    background: #f0f4f8;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 1.5rem;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    border: 1px solid #cbd5e0;
+    border-radius: 12px;
+    padding: 2rem;
     margin: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .content-section {
     background: white;
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 12px;
     margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.principle-box {
+    background: linear-gradient(135deg, #e6f3ff 0%, #cce7ff 100%);
+    border-left: 4px solid #4299e1;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.prediction-box {
+    background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+    border-left: 4px solid #38a169;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.case-study-box {
+    background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+    border-left: 4px solid #e53e3e;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
 }
 
 .reference-item {
     background: #f7fafc;
     border-left: 3px solid #4299e1;
-    padding: 0.8rem;
+    padding: 1rem;
     margin: 0.5rem 0;
     border-radius: 0 4px 4px 0;
+    font-size: 0.9rem;
 }
 
 .discussion-box {
-    background: #e6fffa;
+    background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
     border: 1px solid #81e6d9;
-    border-radius: 8px;
-    padding: 1rem;
+    border-radius: 12px;
+    padding: 1.5rem;
     margin: 1rem 0;
 }
 
 .key-insight {
     background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
     color: white;
-    padding: 1rem;
-    border-radius: 8px;
+    padding: 1.5rem;
+    border-radius: 12px;
     margin: 1rem 0;
     text-align: center;
     font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .visualization-container {
     background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
+    padding: 2rem;
+    border-radius: 12px;
     margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.interactive-demo {
+    background: linear-gradient(135deg, #fef5e7 0%, #fed7aa 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    border: 2px solid #ed8936;
+}
+
+.quiz-container {
+    background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    border: 2px solid #38a169;
 }
 
 .full-paper-text {
     background: white;
-    padding: 2rem;
-    border-radius: 8px;
+    padding: 3rem;
+    border-radius: 12px;
     margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: justify;
 }
 
 .paper-section {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .keywords {
     font-style: italic;
     color: #666;
     margin-top: 1rem;
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+h1, h2, h3 {
+    color: #2d3748;
+}
+
+.metric-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 </style>
 """, unsafe_allow_html=True)
@@ -138,96 +200,170 @@ st.markdown("""
 
 # Sidebar Navigation
 with st.sidebar:
-    st.header("Paper Navigation")
+    st.header("📚 Paper Navigation")
     section = st.radio("Select Section:", [
-        "Paper Overview",
-        "Full Paper Text",
-        "Abstract & Introduction", 
-        "Theoretical Framework",
-        "The IMR Model",
-        "Case Studies",
-        "Applications & Implications",
-        "Discussion Questions",
-        "References & Further Reading"
+        "📖 Paper Overview",
+        "📄 Full Paper Text",
+        "🎯 Abstract & Introduction", 
+        "🧠 Theoretical Framework",
+        "🔬 The IMR Model",
+        "📊 Case Studies",
+        "💡 Applications & Implications",
+        "🤔 Discussion Questions",
+        "📚 References & Further Reading",
+        "🎮 Interactive Demos"
     ])
     
     st.markdown("---")
-    st.subheader("Study Tools")
-    if st.button("Download Paper", use_container_width=True):
-        st.info("Paper download would be available in full implementation")
+    st.subheader("📖 Study Tools")
     
-    if st.button("Citation Format", use_container_width=True):
+    # Citation generator
+    if st.button("📋 Generate Citation", use_container_width=True):
         st.code("""
+APA Citation:
 Honablue, X. (2025). Information Networks and Moral 
 Responsibility: How Digital Connectivity Transforms 
-Ethical Obligations. PHL201 Course Materials.
-        """)
+Ethical Obligations. University of Michigan Ann Arbor 
+Masters Applied Data Science Program.
 
-# Define content display function
+MLA Citation:
+Honablue, Xavier. "Information Networks and Moral 
+Responsibility: How Digital Connectivity Transforms 
+Ethical Obligations." PHL201 Course Materials, 2025.
+        """)
+    
+    # Reading time estimate
+    st.info("📖 **Reading Time:** ~25-30 minutes")
+    
+    # Paper metrics
+    st.markdown("---")
+    st.subheader("📊 Paper Metrics")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.metric("Sections", "7")
+        st.metric("References", "12")
+    with col2:
+        st.metric("Word Count", "~6,500")
+        st.metric("Pages", "15")
+
+# Main content display function
 def display_content():
-    if section == "Paper Overview":
+    if section == "📖 Paper Overview":
         st.markdown('<div class="content-section">', unsafe_allow_html=True)
         st.subheader("📖 Paper Overview")
+        
+        col1, col2 = st.columns([2, 1])
+        
+        with col1:
+            st.write("**Research Question:** How does digital connectivity transform moral responsibility in contemporary society?")
+            st.write("**Methodology:** Interdisciplinary analysis drawing on moral psychology, network theory, and media studies")
+            st.write("**Key Contribution:** The Information-Mediated Responsibility (IMR) model - a framework for understanding ethical obligations in digital environments")
+            
+            st.markdown('<div class="key-insight">', unsafe_allow_html=True)
+            st.write("🎯 **Key Insight:** Digital information doesn't just expand moral awareness—it fundamentally transforms the nature of moral responsibility itself.")
+            st.markdown('</div>', unsafe_allow_html=True)
+        
+        with col2:
+            st.markdown('<div class="metric-card">', unsafe_allow_html=True)
+            st.metric("Core Principles", "4", help="Information Integration, Network Amplification, Cognitive Load, Mediation Transparency")
+            st.markdown('</div>', unsafe_allow_html=True)
+            
+            st.markdown('<div class="metric-card">', unsafe_allow_html=True)
+            st.metric("Empirical Predictions", "4", help="Testable hypotheses generated by the IMR model")
+            st.markdown('</div>', unsafe_allow_html=True)
+            
+            st.markdown('<div class="metric-card">', unsafe_allow_html=True)
+            st.metric("Case Studies", "3", help="Haiti earthquake, Climate change, COVID-19 pandemic")
+            st.markdown('</div>', unsafe_allow_html=True)
+        
         st.markdown('</div>', unsafe_allow_html=True)
-        
-        st.write("**Research Question:** How does digital connectivity transform moral responsibility in contemporary society?")
-        
-        st.write("**Methodology:** Interdisciplinary analysis drawing on moral psychology, network theory, and media studies")
-        
-        st.write("**Key Contribution:** The Information-Mediated Responsibility (IMR) model - a framework for understanding ethical obligations in digital environments")
         
         st.subheader("🎯 Learning Objectives")
         st.write("After engaging with this paper, students will be able to:")
-        st.write("• Analyze how digital information affects moral judgment and behavior")
-        st.write("• Evaluate the strengths and limitations of traditional ethical frameworks in digital contexts") 
-        st.write("• Apply the IMR model to contemporary moral challenges")
-        st.write("• Critically assess the role of technology in shaping moral communities")
+        objectives = [
+            "Analyze how digital information affects moral judgment and behavior",
+            "Evaluate the strengths and limitations of traditional ethical frameworks in digital contexts",
+            "Apply the IMR model to contemporary moral challenges",
+            "Critically assess the role of technology in shaping moral communities",
+            "Design more ethical information systems and policies"
+        ]
+        for i, obj in enumerate(objectives, 1):
+            st.write(f"{i}. {obj}")
         
-        # Visualization: Moral Information Flow
+        # Interactive visualization: Moral Information Flow
         st.markdown('<div class="visualization-container">', unsafe_allow_html=True)
-        st.subheader("Moral Information Flow in Digital Networks")
+        st.subheader("🌐 Moral Information Flow in Digital Networks")
         
         # Create network visualization
+        np.random.seed(42)
+        
+        # Network nodes
+        nodes = {
+            'Individual': (0, 0, 'lightblue', 50),
+            'Social Media': (2, 1, 'orange', 70),
+            'Global Crisis': (4, 0, 'red', 80),
+            'Local Community': (1, -2, 'green', 60),
+            'Government': (3, -1, 'purple', 65),
+            'NGOs': (2, -3, 'pink', 55),
+            'News Media': (4, 2, 'yellow', 60),
+            'Family/Friends': (-1, -1, 'lightgreen', 45)
+        }
+        
         fig = go.Figure()
         
         # Add nodes
-        fig.add_trace(go.Scatter(
-            x=[0, 1, 2, 1, 0.5, 1.5, 1],
-            y=[1, 2, 1, 0, 0.5, 0.5, 1],
-            mode='markers+text',
-            text=['Individual', 'Media', 'Global Event', 'Community', 'Response 1', 'Response 2', 'Moral Agent'],
-            textposition='middle center',
-            marker=dict(size=[40, 60, 80, 50, 30, 30, 45], 
-                       color=['lightblue', 'orange', 'red', 'green', 'yellow', 'yellow', 'purple']),
-            showlegend=False
-        ))
+        for name, (x, y, color, size) in nodes.items():
+            fig.add_trace(go.Scatter(
+                x=[x], y=[y],
+                mode='markers+text',
+                text=[name],
+                textposition='middle center',
+                marker=dict(size=size, color=color, line=dict(width=2, color='white')),
+                showlegend=False,
+                hovertemplate=f"<b>{name}</b><br>Influence on moral decision-making<extra></extra>"
+            ))
         
         # Add connections
-        connections = [(0,1), (1,2), (1,3), (0,4), (0,5), (3,6), (1,6)]
-        for start, end in connections:
-            x_coords = [fig.data[0].x[start], fig.data[0].x[end]]
-            y_coords = [fig.data[0].y[start], fig.data[0].y[end]]
+        connections = [
+            ('Individual', 'Social Media', 3),
+            ('Individual', 'Local Community', 2),
+            ('Individual', 'Family/Friends', 4),
+            ('Social Media', 'Global Crisis', 3),
+            ('Social Media', 'News Media', 2),
+            ('Local Community', 'Government', 2),
+            ('Government', 'NGOs', 2),
+            ('NGOs', 'Global Crisis', 3),
+            ('News Media', 'Global Crisis', 4)
+        ]
+        
+        for start, end, weight in connections:
+            x0, y0 = nodes[start][:2]
+            x1, y1 = nodes[end][:2]
             fig.add_trace(go.Scatter(
-                x=x_coords, y=y_coords,
+                x=[x0, x1], y=[y0, y1],
                 mode='lines',
-                line=dict(width=2, color='gray'),
-                showlegend=False
+                line=dict(width=weight, color='rgba(100,100,100,0.5)'),
+                showlegend=False,
+                hoverinfo='skip'
             ))
         
         fig.update_layout(
             title="How Information Networks Shape Moral Response",
-            xaxis=dict(showgrid=False, showticklabels=False),
-            yaxis=dict(showgrid=False, showticklabels=False),
-            height=400
+            xaxis=dict(showgrid=False, showticklabels=False, zeroline=False),
+            yaxis=dict(showgrid=False, showticklabels=False, zeroline=False),
+            height=500,
+            plot_bgcolor='rgba(0,0,0,0)',
+            paper_bgcolor='rgba(0,0,0,0)'
         )
         
         st.plotly_chart(fig, use_container_width=True)
+        st.caption("Interactive network showing how moral information flows through digital and traditional channels to influence individual decision-making.")
         st.markdown('</div>', unsafe_allow_html=True)
 
-    elif section == "Full Paper Text":
+    elif section == "📄 Full Paper Text":
         st.markdown('<div class="full-paper-text">', unsafe_allow_html=True)
         
-        st.write("""
+        st.markdown("""
         # Information Networks and Moral Responsibility: How Digital Connectivity Transforms Ethical Obligations
 
         **Xavier Honablue, M.Ed.**  
@@ -408,33 +544,4 @@ def display_content():
 
         These insights have practical implications for educational curricula, platform design, and public policy. As digital connectivity continues to evolve, developing sophisticated frameworks for information-mediated moral responsibility becomes increasingly urgent.
 
-        The goal is not to maximize moral engagement but to calibrate it appropriately - responding to genuine moral demands while avoiding the psychological defense mechanisms that lead to moral numbing and disengagement. This requires both individual moral literacy and collective efforts to create information environments that support rather than undermine moral agency.
-
-        Future research should focus on empirical testing of IMR predictions and development of practical tools for navigating moral complexity in digital environments. The stakes are high: our capacity for appropriate moral response to global challenges may depend on our ability to understand and manage the transformation of moral responsibility in the digital age.
-
-        ## References
-
-        Bicchieri, C. (2006). *The grammar of society: The nature and dynamics of social norms*. Cambridge University Press.
-
-        Decety, J., & Jackson, P. L. (2004). The functional architecture of human empathy. *Behavioral and Cognitive Neuroscience Reviews*, 3(2), 71-100.
-
-        Figley, C. R. (2002). *Compassion fatigue: Psychotherapists' chronic lack of self care*. Journal of Clinical Psychology, 58(11), 1433-1441.
-
-        Greene, J. D. (2013). *Moral tribes: Emotion, reason, and the gap between us and them*. Penguin Press.
-
-        Haidt, J. (2012). *The righteous mind: Why good people are divided by politics and religion*. Vintage Books.
-
-        Latané, B., & Darley, J. M. (1970). *The unresponsive bystander: Why doesn't he help?* Appleton-Century-Crofts.
-
-        Nussbaum, M. C. (2001). *Upheavals of thought: The intelligence of emotions*. Cambridge University Press.
-
-        Pariser, E. (2011). *The filter bubble: What the Internet is hiding from you*. Penguin Press.
-
-        Slovic, P. (2007). "If I look at the mass I will never act": Psychic numbing and genocide. *Judgment and Decision Making*, 2(2), 79-95.
-
-        Sunstein, C. R. (2017). *#Republic: Divided democracy in the age of social media*. Princeton University Press.
-
-        Weber, E. U. (2006). Experience-based and description-based perceptions of long-term risk: Why global warming does not scare us (yet). *Climatic Change*, 77(1-2), 103-120.
-        """)
-        
-        st.markdown('</div>', unsafe_allow_html=True)
+        The goal is not to maximize moral engagement but to calibrate it appropriately -
